@@ -8,13 +8,15 @@ import { CourseComponent } from './course/course.component';
 import { CoursesService } from './courses.service';
 import { AuthorsComponent } from './authors/authors.component';
 import { AuthorsService } from './authors/authors.service';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
     CourseComponent,
-    AuthorsComponent
+    AuthorsComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
