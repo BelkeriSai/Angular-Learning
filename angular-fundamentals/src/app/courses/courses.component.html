@@ -5,4 +5,29 @@
     <ul>Duration: {{course.duration}} Hours</ul>
     <ul>Instructor: {{course.nameOfInstructor}}</ul>
     <ul>Rating: {{course.rating}}</ul>
+
+    <h4 [textContent] = "course.courseName"> </h4> <!--This is an example of property binding. We use [] to refer to the property and set its value dynamically. In this example we are setting the textContent Property-->
+
+    <!--Below is the example of Attribute binding. Use [attr.<someProperty>] when the html property that we are reffering to is not available in DOM. in the below example we are using the html property colspan, but that is not available in DOM, Hence we have to refer to it as [attr.colspan]. Try removing "attr."" and then see the error you get in the browser console-->
+    <table>
+        <tr>
+            <td [attr.colspan] = colSpan> test </td>
+        </tr>
+    </table>
+
+    <!--Bootstrap Example-->
+    <button class = "btn btn-primary">Enroll</button>
+
+    <!--Class Binding, In this we add additional classes to a component based on some conditions, In the below example if the isWishlisted value is true, then the disabled class is applied on button component if it's false then it is not applied. P.S: in both cases, btn and btn-secondary will be still applied-->
+    <button class = "btn btn-secondary" [class.disabled]="isWishListed">Add to Wish List</button>
+
+    <!--Style Binding - Adding additional styles to a component based on some conditions. In the below example if the isFav value is true, then the backgroundColor style is applied on button component if it's false then it is not applied. P.S: in both cases, btn and btn-secondary will be still applied-->
+    <button class = "btn star-button" [style.backgroundColor] = "isFav ? 'gold':'gray'"> <span>&#9733;</span> </button>
+
+    <!--Event Binding-->
+    <button (click)="onSave($event)">Save</button>
+
+    <!--event Filtering & Template Variables-->
+
+    <input #templateVariable (keyup.enter)="onKeyUp(templateVariable.value)" /> <!--when you press Enter button on keyboard it executes the onKeyUp Function-->
 </div>
